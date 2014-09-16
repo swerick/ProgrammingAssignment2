@@ -6,7 +6,6 @@
 ## $set() sets the object value             eg (y$set(matrix(c(1,2,3,4), 2, 2)))
 
 makeCacheMatrix <- function(x = matrix()) {
-  ## m is the free variable set in the parent environment
   m <- NULL
   set <- function(y) {
     x <<- y
@@ -18,7 +17,6 @@ makeCacheMatrix <- function(x = matrix()) {
   list(set = set, get = get,
        setmatrix = setmatrix,
        getmatrix = getmatrix)
-  ## End Old Code
   
 }
 
@@ -41,5 +39,4 @@ cacheSolve <- function(x, ...) {
   m <- solve(thematrix, ...)
   x$setmatrix(m)
   m
-  ## End Old Code
 }
